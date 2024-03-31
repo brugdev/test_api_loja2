@@ -4,14 +4,14 @@ import contrato from '../../contracts/user.contract'
 
 
 describe('Testes de usuario', () => {
-    //let token
-   // before(() => {
-    //    cy.token().then(tkn => { token = tkn })
+    let token
+    before(() => {
+       cy.token().then(tkn => { token = tkn })
     
     
 });
 
-it.only('Deve validar contrato de usuario', () => {
+it('Deve validar contrato de usuario', () => {
     cy.request('http://lojaebac.ebaconline.art.br/public/addUser').then(response => {
         return contrato.validateAsync(response.body)
     })
@@ -37,7 +37,7 @@ it('Deve cadastrar usuario', () => {
 });
 
 
-it('Deve alterar o usuario', () => {
+it.only('Deve alterar o usuario', () => {
     cy.request({
         method: 'PUT',
         url: 'http://lojaebac.ebaconline.art.br/api/editUser/6608bf414cd5a2e84942f9c7',
@@ -66,7 +66,7 @@ it('Deve Deletar o usuario', () => {
 });
 
 
-//});
+});
 
 
 

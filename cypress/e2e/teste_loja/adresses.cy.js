@@ -3,9 +3,9 @@ import { faker } from '@faker-js/faker';
 import contrato from '../../contracts/address.contract'
 
 describe('Testes de usuario', () => {
-    //let token
-   // before(() => {
-    //    cy.token().then(tkn => { token = tkn })
+    let token
+    before(() => {
+        cy.token().then(tkn => { token = tkn })
     
     
 });
@@ -59,4 +59,7 @@ it('Deve DELETAR um endereco', () => {
         expect(response.status).to.equal(200)//retorno status code
         expect(response.body.success).to.be.true
     })
+});
+
+
 });
